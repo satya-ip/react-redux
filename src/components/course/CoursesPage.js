@@ -57,7 +57,7 @@ function mapStateToProps(state, ownProps){
 
 function mapDisatchToProps(dispatch){
     return {
-        createCourse: course
+        createCourse: courses
     }
 }
 export default connect(mapStateToProps)(CoursesPage);
