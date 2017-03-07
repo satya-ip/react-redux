@@ -9,7 +9,7 @@ render(){
             <p>React, Reduct and React Router in ES6 for uktra-respnsive web apps.</p>
             <Link to="about" className="btn btn-primary btn-lg">Learn more..</Link>
         </div>
-    )
+    );
 }
 
 }
