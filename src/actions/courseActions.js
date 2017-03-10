@@ -6,16 +6,17 @@ export function loadCoursesSuccess(courses){
 }
 
 export function createCourseSuccess(course){
-    return {types: types.CREATE_COURSE_SUCCESS, course};
+    return {type: types.CREATE_COURSE_SUCCESS, course};
 }
 
 export function updateCourseSuccess(course){
-    return {types: types.UPDATE_COURSE_SUCCESS, course};
+    return {type: types.UPDATE_COURSE_SUCCESS, course};
 }
 
 export function loadCourses(){
     return function(dispatch){
         return courseApi.getAllCourses().then(courses => {
+            debugger;
             dispatch(loadCoursesSuccess(courses));
         }).catch(error => {
             throw(error);

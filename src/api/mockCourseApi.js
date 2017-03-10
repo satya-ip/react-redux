@@ -1,4 +1,5 @@
 import delay from './delay';
+const client = require('./client');
 
 // This file mocks a web API by working with the hard-coded data below.
 // It uses setTimeout to simulate the delay of an AJAX call.
@@ -57,10 +58,14 @@ const generateId = (course) => {
 
 class CourseApi {
   static getAllCourses() {
+    debugger;
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(Object.assign([], courses));
-      }, delay);
+      let coursesList; 
+      client({method: 'GET', path:'/data/courses.json'}).done(response => {
+        coursesList = response.entity;
+        resolve(Object.assign([], coursesList));
+      });
+     
     });
   }
 
